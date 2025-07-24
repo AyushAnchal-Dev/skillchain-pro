@@ -17,10 +17,15 @@
   },
   "defaults": {
     "build": {
-      "args": "",
-      "packtool": ""
+      "args": ""
     }
   },
   "output_env_file": ".env",
-  "version": 1
+  "version": 1,
+  "bootstrap": [],
+  "canister_settings": {
+    "skillchain-pro-frontend": {
+      "csp": "default-src 'self'; connect-src 'self' https://skillchain-pro-backend.onrender.com https://icp0.io https://*.icp0.io https://icp-api.io; script-src 'self'; style-src 'self';"
+    }
+  }
 }

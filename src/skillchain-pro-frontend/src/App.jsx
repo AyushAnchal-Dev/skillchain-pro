@@ -1,31 +1,23 @@
-import { useState } from 'react';
-import { skillchain_pro_backend } from 'declarations/skillchain-pro-backend';
+
+import { HashRouter as Router,Routes,Route } from 'react-router-dom'; 
+
+import LandingPage from './pages/LandingPage';
+import RecruiterDashboard from './pages/RecruiterDashboard';
+import StudentDashboard from './pages/StudentDashboard';
+import VerifierDashboard from './pages/VerifierDashboard';
+import NFTViewer from './pages/NFTViewer';
 
 function App() {
-  const [greeting, setGreeting] = useState('');
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    const name = event.target.elements.name.value;
-    skillchain_pro_backend.greet(name).then((greeting) => {
-      setGreeting(greeting);
-    });
-    return false;
-  }
-
   return (
-    <main>
-      <img src="/logo2.svg" alt="DFINITY logo" />
-      <br />
-      <br />
-      <form action="#" onSubmit={handleSubmit}>
-        <label htmlFor="name">Enter your name: &nbsp;</label>
-        <input id="name" alt="Name" type="text" />
-        <button type="submit">Click Me!</button>
-      </form>
-      <section id="greeting">{greeting}</section>
-    </main>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/recruiter" element={<RecruiterDashboard />} />
+        <Route path="/student" element={<StudentDashboard />} />
+        <Route path="/verifier" element={<VerifierDashboard />} />
+        <Route path="/nft/:id" element={<NFTViewer />} />
+      </Routes>
+    </Router>
   );
 }
-
 export default App;
