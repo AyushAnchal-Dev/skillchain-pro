@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "skillchain-pro-backend": {
+      "main": "src/skillchain-pro-backend/main.mo",
+      "type": "motoko"
+    },
+    "skillchain-pro-frontend": {
+      "dependencies": [
+        "skillchain-pro-backend"
+      ],
+      "source": [
+        "src/skillchain-pro-frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "skillchain-pro-frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
